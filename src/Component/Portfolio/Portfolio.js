@@ -8,13 +8,19 @@ const anim2 = ["flip-left", "slide-left", "flip-right", "flip-up", "zoom-in-left
 const Portfolio = () => {
     
     return (
-      <div>
-        <NavbarCont />
-         <section className="portfolio container">
-          <h1 className="mb-5">My Works</h1>
-          {PortfolioData.map((d,i)=> <PortfolioCard data={d} key={i} anim1={anim1[i]} anim2={anim2[i]} id={i} layout={"col-lg-6"}></PortfolioCard>)}
-         </section>
-     </div>
+        <section className="portfolio container">
+          <h1 className="mb-5">MY <span className="text-light">Works</span></h1>
+          {PortfolioData.map((d, i) => (
+            <PortfolioCard
+              data={d}
+              key={i}
+              anim1={anim1[i]}
+              anim2={anim2[i]}
+              id={i}
+              layout={"col-lg-6"}
+            ></PortfolioCard>
+          ))}
+        </section>
     );
 };
 

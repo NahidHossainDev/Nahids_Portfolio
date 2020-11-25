@@ -20,10 +20,10 @@ const PortfolioCard = ({ data, id, anim1, anim2, layout }) => {
         <p>{id + 1}</p>
         <h4>{title}</h4>
         <div className="portfolio-icons">
-          <a href={gitHub}>
+          <a href={gitHub} target="blank">
             <FontAwesomeIcon icon={faGithub} />
           </a>
-          <a href={liveSite}>Live</a>
+          <a href={liveSite}  target="blank">Live</a>
         </div>
         <p>{detail}</p>
         {tec.map((d, i) => (

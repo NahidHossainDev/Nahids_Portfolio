@@ -2,14 +2,16 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faLinkedinIn, faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Typical from "react-typical";
-import Particles from 'react-particles-js';
 import { Link } from 'react-router-dom';
+import ReactParticles from "react-particles-js";
+import particlesStyle from "./Particles-config";
 
 const Header = () => {
-    return (
-      <div className="home d-flex justify-content-center align-items-center">
+  return (
+    <Particles>
+      <div className="home-header d-flex justify-content-center align-items-center">
         <div className="text-center">
-          <h3 className="">
+          <h3>
             Hi I'm <span> Md. Nahid Hossain</span>
           </h3>
           <h4 style={{ color: "#05c46b" }}>
@@ -19,14 +21,14 @@ const Header = () => {
               wrapper="p"
             />
           </h4>
-          <div className=" btn-box">
+          <div className="btn-box" style={{zIndex:"9999"}}>
             <Link to="/contact">
-              <button className="btn btn-message mr-5 mt-4"> Send Message </button>
+              <button className="btn btn-message mr-5 mt-4">
+                Send Message
+              </button>
             </Link>
             <a href="https://drive.google.com/uc?export=download&id=180BAu7kayLVxLC0cyHgl5JmhqGBRwtkh">
-              <button className="btn btn-bg mt-4">
-                Download Resume
-              </button>
+              <button className="btn btn-bg mt-4">Download Resume</button>
             </a>
           </div>
           <div className="icons-div">
@@ -48,7 +50,28 @@ const Header = () => {
           </div>
         </div>
       </div>
-    );
+  </Particles>
+  );
 };
 
+
+function Particles({ children }) {
+  return (
+    <div style={{ position: "relative" }}>
+      <ReactParticles
+        params={particlesStyle}
+        style={{
+          pointerEvents: "none",
+          position: "absolute",
+          zIndex: 1,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          top: 0,
+        }}
+      />
+      {children && <div style={{ position: "relative" }}>{children}</div>}
+    </div>
+  );
+}
 export default Header;

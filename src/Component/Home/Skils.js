@@ -51,15 +51,16 @@ const tools = [
   { img: NetlifyImg, name: "Netlify" },
 ];
 
+
 const Skils = () => {
     return (
       <section className="container">
         <h1><span className="text-light">TECHNICAL</span> SKILLS</h1>
-        <p className="text-light">You Should know First</p>
+        <h5 className="text-light">That you Should know First</h5>
         <div className="skill-div" data-aos="zoom-in-out">
           <div className="comfort">
             <h3 className="d-inline-block">Comfort</h3>
-            <div className="skill-icons d-flex justify-content-center">
+            <div className="skill-icons">
               {comfortSkills.map((d, i) => (
                 <div>
                   <img src={d.img} alt="" />
@@ -70,7 +71,7 @@ const Skils = () => {
           </div>
           <div className="familiar">
             <h3 className="d-inline-block">Familiar</h3>
-            <div className="skill-icons d-flex justify-content-center">
+            <div className="skill-icons">
               {familiarSkills.map((d, i) => (
                 <div>
                   <img src={d.img} alt="" />
@@ -81,7 +82,7 @@ const Skils = () => {
           </div>
           <div className="tools">
             <h3 className="d-inline-block">Tools</h3>
-            <div className="skill-icons d-flex justify-content-center">
+            <div className="skill-icons">
               {tools.map((d, i) => (
                 <div>
                   <img src={d.img} alt="" />

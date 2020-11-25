@@ -4,7 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import NavbarCont from '../NavbarCont/NavbarCont';
 
-const Contact = () => {
+const Contact = ({navs}) => {
     useEffect(() => {
         AOS.init({duration:2000})
     },[])
@@ -26,23 +26,22 @@ const Contact = () => {
         
     }
     return (
-        <div>
-            <NavbarCont/>
-            <section >
-                <div className="contact">
-                    <h1 className="mb-5">Contact form</h1>
-                    <div data-aos="flip-right">
-                    <form onSubmit={sendEmail} className="contact-form">
-                        <input type="text" className="form-control" name="name" placeholder="Your Name " id="" required/> <br/>
-                        <input type="text" className="form-control" name="email" placeholder="Your Email" id="" required /> <br/>
-                        <input type="text" className="form-control" name="subject" placeholder="Subject" id="" /> <br/>
-                        <textarea rows="5" type="text" className="form-control" name="message" placeholder="Message" id="" required/> <br/>
-                        <button type="submit" className="btn btn-success">Send Message</button>
-                    </form>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <section>
+          <div className="contact">
+            <h1 className="mb-5"><span className="text-light">Contact</span> form</h1>
+            <div data-aos="flip-right">
+              <form onSubmit={sendEmail} className="contact-form">
+                <input type="text" className="form-control" name="name"  placeholder="Your Name " id="" required/><br />
+                <input type="text" className="form-control" name="email" placeholder="Your Email" id="" required /> <br />
+                <input type="text" className="form-control" name="subject" placeholder="Subject" id="" /> <br />
+                <textarea  rows="5" type="text" className="form-control" name="message" placeholder="Message" id="" required /><br />
+                <button type="submit" className="btn btn-success">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
     );
 };
 
